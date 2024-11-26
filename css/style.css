@@ -1,0 +1,433 @@
+:root {
+
+  --secondary-color: #3d1515;
+  --section-padding: 60px;
+  --section-background:  #E8E6DB;
+  ;
+  --main-duration: 0.5s;
+}
+/* End Variables */
+/* Start Global Rules */
+HTML{scroll-behavior: smooth;}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ 
+body {
+  background-color: #E8E6DB;
+  font-family: 'Cairo', sans-serif;
+}
+p {
+  font-size: 20px;
+  color: #3d1515;
+  font-weight:bold;
+}
+h3{
+  color:#001a00
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+ 
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+ 
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Global Rules */
+/* جملة القسم */
+.special-heading {
+  margin-bottom: 10px;
+  color:rgba(215, 211, 192, 1);
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.special-heading + p {
+  margin: -30px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color:#001a00c7;
+}
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+    
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  
+  }
+}
+/* End Components */
+
+
+/* Start Header */
+.header {
+  padding: 20px;
+  padding-bottom: 0px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E8E6DB;
+  justify-content: flex-end;   /* no logo */
+}
+.header .logo {     
+  width: 100px;
+  margin: 10px;
+}
+.header .links {
+  position: relative;
+}
+.header .links:hover .icon span:nth-child(2) {
+  width: 100%;
+}
+.header .links .icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.header .links .icon span {
+
+  margin-bottom: 5px;
+  height: 2px;
+}
+.header .links .icon span:first-child {
+  width: 100%;
+  background-color: black;
+}
+.header .links .icon span:nth-child(2) {
+  width: 60%;
+  transition: var(--main-duration);
+  background-color: red;
+}
+.header .links .icon span:last-child {
+  width: 100%;
+  background-color:green
+}
+.header .links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 15px);
+  display: none;
+  z-index: 1;
+}
+.header .links ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #f6f6f6 transparent;
+  position: absolute;
+  right: 5px;
+  top: -20px;
+}
+.header .links:hover ul {
+  display: block;
+}
+.header .links ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: rgb(0, 25, 40);;
+  transition: var(--main-duration);
+  font-weight: bold;
+}
+.header .links ul li a:hover {
+  padding-left: 25px;
+}
+.header .links ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+/* End Header */
+/* التصميم الأساسي */
+.landing .intro-text {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-family: 'Cairo', sans-serif;
+  text-align: justify;
+}
+
+
+/* Start Landing Section */
+.landing {
+  background-image: url(../img/salam.webp);
+  background-size: cover;
+  height: calc(100vh - 64px); /* لملء الشاشة مع خصم ارتفاع الشريط العلوي */
+  position: relative;
+}
+.landing .intro-text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: right;
+  direction: rtl;
+  background-color: rgba(240, 248, 255, 0.7);
+  padding: 20px; 
+
+
+}
+.landing .intro-text h1, .landing .intro-text p {
+  line-height: 1.6;
+  font-weight: bold;
+  direction: rtl;
+  text-shadow:  2px 2px 5px rgba(0, 0, 0, 0.33); 
+}
+.landing .intro-text p {
+  font-size: 25px;
+  color: #001a00;
+  text-align: center;
+}
+.landing .intro-text h1 {
+  margin: 0;
+  font-size: 50px;
+  color: #001a00;
+  font-style: italic;
+  margin-right: 30%;
+}
+/* Start Features */
+
+.features .container {
+  display: flex; 
+  justify-content: space-around; 
+  align-items: center; /* لضبط العناصر عموديًا في المنتصف */
+}
+.features .feat {
+  padding: 20px;
+  text-align: center;
+  flex: 1; /* لجعل كل عنصر يشغل مساحة متساوية */
+}
+.features .feat img {
+  width: 100px;
+  height: 100px; 
+  border-radius: 50%; 
+  border: 2px solid var(--main-color); 
+  object-fit: cover; 
+  object-position: center;
+  clip-path: circle(50% at 50% 50%);
+}
+.features .feat h3 {
+  font-weight: 800;
+  margin: 30px 0;
+  color: #3d1515;
+}
+.features .feat p {
+  line-height: 1.8;
+  font-size: 17px;
+  font-weight: bold;
+  color: #001a00;
+}
+/* end */
+
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+.portfolio-content {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap
+}
+.card {
+  flex: calc(30% - 10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  
+}
+.card img {
+  width: 90%; /* تصغير حجم الصور */
+  margin: 0 auto; /* لضمان محاذاة الصورة في المنتصف */
+  display: block;
+  padding-top: 7%;
+}
+.card .info {
+  padding: 15px;
+  padding-top: 0px;
+}
+.card .info p{
+  direction: rtl;
+  line-height:1.5;
+  font-size:18px;
+}
+.card .info h3{
+  direction: rtl;
+}
+/* srv */
+.srv {
+  margin-top:20px;
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2px 0px; 
+}
+.srv img {
+  height: auto;
+  object-fit: cover;
+  width: 15%;
+}
+.srv .text {
+  flex: 1;
+  text-align: right; 
+}
+.srv .text h3 {
+  font-size: 1.2rem;
+  color: #001a00; 
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* إضافة تأثير الظل */
+}
+.srv .text p {
+  font-size: 1rem;
+  color: #3d1515; 
+  line-height: 1.8;
+}
+
+           /*رؤية و رسالة  */
+
+.about .container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+.about-content {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-content .image img {
+  width: 50%;
+  border-radius: 10px;
+  margin:25px;
+}
+
+.about-content .text {
+  flex: 1;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Start Footer */
+.footer {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  .special-heading {
+    font-size: 50px;
+  }
+  .special-heading + p {
+    font-size: 16px;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .landing .intro-text h1 {
+    font-size: 35px;
+    margin-right: 10%;
+  }
+  .landing .intro-text p {
+    font-size: 18px;
+  }
+  .features .container {
+    display: block;
+  }
+  .features .feat img {
+    width: 80px;
+    height: 80px;
+  }
+  .card {
+    flex: 100%;
+  }
+  .srv img {
+    width: 20%;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+  .special-heading {
+    font-size: 50px;
+  }
+  .special-heading + p {
+    font-size: 16px;
+  }
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .landing .intro-text h1 {
+    font-size: 35px;
+    margin-right: 10%;
+  }
+  .landing .intro-text p {
+    font-size: 18px;
+  }
+  .features .feat img {
+    width: 80px;
+    height: 80px;
+  }
+  .card {
+    flex: 100%;
+  }
+  .srv img {
+    width: 20%;
+  }
+}
